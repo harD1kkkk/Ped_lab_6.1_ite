@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <iomanip>
 
 using namespace std;
 
@@ -12,7 +13,7 @@ void CreateArrayWithRandomElements(int* a, int numberOfElements, int start, int 
 
 void PrintArray(int* a, int size) {
     for (int i = 0; i < size; i++) {
-        cout << "a[" << i << "] = " << a[i] << "; ";
+        cout << setw(4)<< a[i] << "; ";
     }
     cout << endl;
 }
@@ -22,7 +23,7 @@ int CountAndSumElements(int* a, int size, int& sum) {
     sum = 0;
     for (int i = 0; i < size; i++) {
         if (a[i] < 0 && a[i] % 2 == 0) {
-            count++; 
+            count++;
             sum += a[i];
         }
     }
